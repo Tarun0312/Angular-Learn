@@ -1,0 +1,11 @@
+<div>
+    <input type="radio" value="0" [(ngModel)]="selectedRadioFilter" (change)="onSelectedRadioFilterChange()" />
+    <label> All {{ '('+ totalProducts +')'}}</label>
+
+    <input type="radio" value="1" [(ngModel)]="selectedRadioFilter" (change)="onSelectedRadioFilterChange()" />
+    <label> In Stock {{ '('+ inStock+')'}}</label>
+
+    <input type="radio" value="2" [(ngModel)]="selectedRadioFilter" (change)="onSelectedRadioFilterChange()" />
+    <label> Not In Stock {{ '('+ notInStock +')'}}</label>
+
+</div>

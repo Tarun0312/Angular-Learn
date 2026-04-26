@@ -1,0 +1,8 @@
+<app-filter (selectedRadioFilterChange)="filterProductList($event)" [totalProductCount]="totalProductCount"
+    [inStock]="totalProductsInStock" [notInStock]="totalProductsNotInStock"></app-filter>
+<div class="product-list">
+    <ng-container  *ngFor="let prod of products; let i =index">
+        <app-product [product]="prod" [idx]="i" (click)="storeSelectedProduct(prod)">
+        </app-product>
+    </ng-container>
+</div>

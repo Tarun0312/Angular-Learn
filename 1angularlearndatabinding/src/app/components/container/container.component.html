@@ -1,0 +1,32 @@
+<div>
+
+    <app-search (onSearchTextChanged)="searchProducts($event)"></app-search>
+    <app-product-list [searchText]="searchText" #productListRef></app-product-list>
+    <app-product-detail (removeSelectedProduct)="removeSelectedPro($event)" [productListComp]="productListComponent"
+        *ngIf="productListComponent?.selectedProduct">
+    </app-product-detail>
+
+    <div class="ekart-fp">
+        <div class="heading">
+            <h1>Latest Arrival in Popular Brands</h1>
+        </div>
+
+        <!-- Project content from parent to child using ng-content -->
+        <!-- To show content inside component selector,we use ng-content in child -->
+        <app-featured-product>
+            <h3 class="title">New Arrivals in Nike</h3>
+            <button class="call-to-action">Show New Arrivals in Nike</button>
+        </app-featured-product>
+        <app-featured-product>
+            <h3 class="title">New Arrivals in Adidas</h3>
+            <button class="call-to-action">Show New Arrivals in Adidas</button>
+        </app-featured-product>
+        <app-featured-product>
+            <h3 class="title">New Arrivals in Rebok</h3>
+            <button class="call-to-action">Show New Arrivals in Rebok</button>
+        </app-featured-product>
+
+
+    </div>
+
+</div>

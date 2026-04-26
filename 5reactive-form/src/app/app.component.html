@@ -1,0 +1,141 @@
+<section class="container">
+  <header>Registration Form</header>
+
+  <form class="form" (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
+    <div class="column">
+      <div class="input-box">
+        <input type="text" placeholder="First Name" name="firstName" formControlName="firstName" />
+        <small *ngIf="reactiveForm.controls['firstName'].touched && reactiveForm.controls['firstName']['errors']?.['required']">*First
+          Name is a required field.</small>
+        <small *ngIf="reactiveForm.get('firstName')?.touched && reactiveForm.get('firstName')?.errors?.['noSpaceAllowed']">
+          *Space Not allowed for first name
+        </small>
+      </div>
+
+
+      <div class="input-box">
+        <input type="text" placeholder="Last Name" name="lastName" formControlName="lastName" />
+        <small *ngIf="reactiveForm.get('lastName')?.touched && reactiveForm.get('lastName')?.['errors']?.['required'] ">*Last Name is a
+          required field.</small>
+          <small *ngIf="reactiveForm.get('lastName')?.touched && reactiveForm.get('lastName')?.['errors']?.['noSpaceAllowed']">
+            *Space Not allowed in last name
+          </small>
+      </div>
+    </div>
+
+    <div class="input-box">
+      <input type="text" placeholder="Email" name="email" formControlName="email" />
+      <small
+        *ngIf="reactiveForm.get('email')?.touched && reactiveForm.get('email')?.invalid  && reactiveForm.get('email')?.errors?.['required']">*Email
+        is required field.</small>
+      <small
+        *ngIf="reactiveForm.get('email')?.touched && reactiveForm.get('email')?.invalid  && reactiveForm.get('email')?.errors?.['email']">*Email
+        is not valid.</small>
+
+    </div>
+
+    <div class="column">
+      <div class="input-box">
+        <input type="text" placeholder="username" name="userName" formControlName="userName" />
+        <small *ngIf="reactiveForm.get('userName')?.touched && reactiveForm.controls['userName']?.['errors']?.['userAlreadyExist']">*User Already Exist</small>
+      </div>
+      <div class="input-box">
+        <input type="date" placeholder="Date of Birth" name="dob" formControlName="dob" />
+      </div>
+    </div>
+
+    <div class="input-box">
+      <button type="button" class="btn-gen-username">
+        Create a Username
+      </button>
+    </div>
+
+
+    <div class="gender-box">
+      <h3>Gender</h3>
+      <div class="gender-option">
+        <div class="gender" *ngFor="let radio of genderRadioOptions;let i=index">
+          <input type="radio" [id]="radio.for" [value]="radio.label" name="gender" formControlName="gender" />
+          <label [for]="radio.for">{{radio.label}}</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-box address" formGroupName="address">
+      <label>Address</label>
+      <input type="text" placeholder="Street address" name="streetAddress" formControlName="streetAddress" />
+      <small
+        *ngIf="reactiveForm.get('address.streetAddress')?.touched && reactiveForm.get('address.streetAddress')?.invalid">Street
+        is a required field</small>
+      <div class="column">
+        <div class="select-box">
+          <select name="country" formControlName="country">
+            <option hidden>Country</option>
+            <option>America</option>
+            <option>Japan</option>
+            <option>India</option>
+            <option>Nepal</option>
+          </select>
+          <small
+            *ngIf="reactiveForm.get('address.country')?.touched && reactiveForm.get('address.country')?.invalid">Country
+            is a required field</small>
+        </div>
+        <input type="text" placeholder="City" name="city" formControlName="city" />
+      </div>
+      <div class="column">
+        <input type="text" placeholder="Region" name="region" formControlName="region" />
+        <input type="text" placeholder="Postal code" name="postal" formControlName="postal" />
+        <small
+          *ngIf="reactiveForm.get('address.postal')?.touched && reactiveForm.get('address.postal')?.invalid && reactiveForm.get('address.postal')?.errors?.['required']">Postal
+          is a required field</small>
+        <small
+          *ngIf="reactiveForm.get('address.postal')?.touched 
+          && reactiveForm.get('address.postal')?.errors?.['minlength']">Postal
+          length must be 6</small>
+      </div>
+
+    </div>
+    <div style="font-weight: bold; padding:5px">ADD skills</div>
+    <div class="input-box" formArrayName="skills">
+      <div  *ngFor="let control of skillsFormArray.controls; let i =index">
+        <input type="text" placeholder="Add Skills..." 
+        [formControlName]="i"
+        style="width: 65%;"
+        />
+        <input type="button" (click)="removeSkill(i)" value="Remove skill" class="submit-btn" style="margin-left:10px;width:30%"/>
+      </div>
+      
+    </div>
+    <input type="button" (click)="addSkill()" value="Add skill" class="submit-btn" style="width:50%"/>
+    <div formArrayName="experience" style="margin-top: 10px;">
+      <div style="border: solid 1px black ; padding:10px;margin-top:5px" [formGroupName]="i" *ngFor="let control of expFormArray.controls;let i=index">
+        <h4>Experience&nbsp;{{i+1}}</h4>
+        <div class="input-box">
+          <input type="text" placeholder="Company" formControlName="company"/>
+        </div>
+        <!-- a{{expFormArray.value | json}}b -->
+        <div class="input-box" style="display: flex;gap:10px">
+          <div class="select-box" style="width: 50%;">
+            <select formControlName="position">
+              <option value="" disabled selected hidden>Position</option>
+              <option >FE Developer</option>
+              <option >BE Developer</option>
+              <option >Full Stack Developer</option>
+              <option >Manager</option>
+            </select>
+          </div>
+          <input style="width: 50%;" type="number" placeholder="Total Exp.." formControlName="totalExp"/>
+        </div>
+        <div class="input-box" style="display: flex;gap:10px">
+          <input style="width: 50%;" type="date" placeholder="Start Date" formControlName="startDate"/>
+          <input style="width: 50%;" type="date" placeholder="End Date" formControlName="endDate"/>
+        </div>
+        <button style="width:50%;" (click)="removeExp(i)" type="button" class="submit-btn">Remove Exp</button>
+      </div>
+      
+    </div>
+    <button style="width:50%;" (click)="addExp()" type="button" class="submit-btn">Add Exp</button>
+
+    <input type="submit" value="Submit" class="submit-btn">
+  </form>
+</section>

@@ -1,0 +1,54 @@
+<form (ngSubmit)="onSubmit()" #regForm="ngForm">
+    <div class="col">
+        <label>First Name</label>
+        <input type="text" name="firstName" ngModel required #firstName="ngModel"/>
+        <small *ngIf="firstName.touched && firstName.invalid">First name is required*</small>
+    </div>
+    <div class="col">
+        <label>Last Name</label>
+        <input type="text" name="lastName" [(ngModel)]="lastName"  required/>
+    </div>
+    <div class="col">
+        <label>Date of Birth</label>
+        <input type="date" name="dob" [(ngModel)]="dob" required/>
+    </div>
+    <div class="col">
+        <label>Gender</label>
+        <ng-container *ngFor="let genderRadio of genderRadioOptions">
+            <label [for]="genderRadio.id">{{genderRadio.label}}</label>
+            <input type="radio" name="gender" [ngModel]="'male'" [id]="genderRadio.id" [value]="genderRadio.value"/>
+        </ng-container>
+
+    </div>
+    <div class="" style="display:flex;flex-direction:column;" ngModelGroup="address" #address="ngModelGroup">
+        <label>Address</label>
+       <div style="display: flex; gap:10px;flex-direction:column">
+        <div class="col">
+            <label>StreetAddress</label>
+            <input type="text" name="street" ngModel/>
+        </div>
+        <div class="col">
+            <label>Country</label>
+            <select name="country" [ngModel]="defaultCountry">
+                <option *ngFor="let country of countryOptions;let i=index">{{country}}</option>
+            </select>
+        </div>
+        <div class="col">
+            <label>City</label>
+            <input type="text" name="city" ngModel required/>
+        </div>
+        <div class="col">
+            <label>Pincode</label>
+            <input type="text" name="pincode" [(ngModel)]="pincod" #pincode="ngModel" required minlength=6/>
+            <small *ngIf="pincode.touched && pincode.invalid">Pincode length must be 6 of digit</small>
+        </div>
+       </div>
+       <small *ngIf="address.touched && address.invalid && !pincode.value">Some of the address fields are required</small>
+    </div>
+    <div class="col">
+        <label>Username</label>
+        <input type="text" name="username" [(ngModel)]="username"/>
+        <button (click)="createUsername()" type="button">Create UserName</button>
+    </div>
+    <button [disabled]="regForm.invalid">Submit</button>
+</form>

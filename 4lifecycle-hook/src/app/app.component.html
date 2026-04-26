@@ -1,0 +1,10 @@
+<input type="text" #inputRef />
+<button (click)="onSubmit(inputRef)">Submit</button>
+<app-demo [message]="inputVal" *ngIf="toggle">
+  <!-- Projected content -->
+  <p #para>Input Value: {{inputVal}}</p> 
+</app-demo>
+<button (click)="toggleFunc()">Toggle</button>
+
+<!-- component directive -->
+<!-- <div app-demo></div> -->

@@ -1,0 +1,20 @@
+<!-- Using Two Way Data binding -->
+<!-- <div>
+    <input type="text" [(ngModel)]="searchText"/>
+    <button (click)="searchProduct()">Search</button>     
+</div> -->
+
+<!-- Using Template reference variable -> is a variable which stores reference to a DOM ELEMENT,component,directive on which it is used -->
+<!-- <div>
+    <input type="text" #searchInput/>
+    <button (click)="searchProduct(searchInput)">Search</button>     
+</div>  -->
+
+<!-- The problem with above case in template reference variable is you need to emit click event to pass reference .Yo can't  directly access this.searchInput -->
+<!-- View Child fixes this problem -->
+<!-- Using ViewChild() Decorator ->It is used to query and get a reference of DOM element in the component.It returns the first matching element. -->
+
+<div>
+    <input type="text" #searchInput/>
+    <button (click)="searchProduct()">Search</button>     
+</div> 
