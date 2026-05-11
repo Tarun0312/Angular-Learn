@@ -1,0 +1,10 @@
+<p>Learning Host Listener -> 
+Host Listener is used to Listen dom events on host elements so that it's handler can be exceuted
+    higlight-product works!</p>
+<b>Host element - DOM element on which Directive is applied</b>
+<div  class="parent">
+    @for(product of productDetails; track product;let i=$index ){
+    <div class="child" appHiglightDirective>{{product}}</div>
+
+    }
+</div>

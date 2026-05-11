@@ -1,0 +1,14 @@
+.parent{
+    display: flex;
+    padding: 20px 10px;
+    gap:30px;
+}
+.child{
+    width:200px;
+    height:200px;
+    border:solid 2px grey;
+}
+.scale{
+    transition: all 150ms;
+    transform: scale(110%);
+}
