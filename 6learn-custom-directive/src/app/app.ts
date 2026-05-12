@@ -5,10 +5,11 @@ import { LearningRenderer } from './learning-renderer/learning-renderer';
 import { HiglightProduct } from './higlight-product/higlight-product';
 import { LearnHostBinding } from './learn-host-binding/learn-host-binding';
 import { DiffBetweenPropertyBindingVsHostBindingAndEventbindingVsHostListener } from './diff-between-property-binding-vs-host-binding-and-eventbinding-vs-host-listener/diff-between-property-binding-vs-host-binding-and-eventbinding-vs-host-listener';
+import { CustomPropertyBindingInDirective } from './custom-property-binding-in-directive/custom-property-binding-in-directive';
 
 @Component({
   selector: 'app-root',
-  imports: [ModifyDomElementUsingElementRef,LearningRenderer,HiglightProduct,LearnHostBinding,DiffBetweenPropertyBindingVsHostBindingAndEventbindingVsHostListener],
+  imports: [ModifyDomElementUsingElementRef,LearningRenderer,HiglightProduct,LearnHostBinding,DiffBetweenPropertyBindingVsHostBindingAndEventbindingVsHostListener,CustomPropertyBindingInDirective],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

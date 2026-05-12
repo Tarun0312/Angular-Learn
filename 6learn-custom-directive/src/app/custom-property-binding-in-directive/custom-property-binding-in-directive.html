@@ -1,0 +1,19 @@
+<div style="display: flex; gap: 10px;">
+
+    <!-- Without using alias -->
+    <!-- <span appCustomPropertyBindingDirective [bgColor]="'red'" [textColor]="'white'" >Adidas</span>
+    <span appCustomPropertyBindingDirective [bgColor]="'grey'" [textColor]="'black'">Men</span>
+    <span appCustomPropertyBindingDirective [bgColor]="'yellow'" [textColor]="'black'">Blue</span> -->
+
+    <!-- With alias -->
+      <!-- //here  [appCustomPropertyBindingDirective] bgColor is assigned with default value  -->
+    <!-- <span [appCustomPropertyBindingDirective]  [textColor]="'white'" >Adidas</span>
+    <span [appCustomPropertyBindingDirective]="'grey'" [textColor]="'black'">Men</span>
+    <span [appCustomPropertyBindingDirective]="'yellow'" [textColor]="'black'">Blue</span> -->
+
+
+    <!-- using object -->
+    <span [appCustomPropertyBindingDirective]="{bgColor:'grey',textColor:'white'}" >Adidas</span> 
+    <span [appCustomPropertyBindingDirective]="{bgColor:'grey',textColor:'black'}">Men</span>
+    <span [appCustomPropertyBindingDirective]="{bgColor:'yellow',textColor:'black'}">Blue</span>
+</div>
