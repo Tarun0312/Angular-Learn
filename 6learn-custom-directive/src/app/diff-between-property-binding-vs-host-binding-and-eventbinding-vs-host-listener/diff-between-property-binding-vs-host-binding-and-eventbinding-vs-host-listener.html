@@ -1,0 +1,23 @@
+<b>diff-between-property-binding-vs-host-binding-and-eventbinding-vs-host-listener works!</b>
+
+<b>Property Binding : value property of input element is bind to inputValue variable of component class
+</b>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+    <input  type="text" [value]="inputValue"/>
+</div>
+
+<b>Host Binding : value property of input element is bind to inputVal variable of directive class</b>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+    <input  type="text" appHostBindingTesting />
+</div>
+
+<b>Event Binding :- </b>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+    <input  type="text" (focus)="onFocus()"/>
+</div>
+
+
+<b>Host Listener: used to Listen DOM event in directive class</b>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+    <input  type="text" appHostBindingTesting/>
+</div>

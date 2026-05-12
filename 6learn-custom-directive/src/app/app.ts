@@ -4,10 +4,11 @@ import { ModifyDomElementUsingElementRef } from './modify-dom-element-using-elem
 import { LearningRenderer } from './learning-renderer/learning-renderer';
 import { HiglightProduct } from './higlight-product/higlight-product';
 import { LearnHostBinding } from './learn-host-binding/learn-host-binding';
+import { DiffBetweenPropertyBindingVsHostBindingAndEventbindingVsHostListener } from './diff-between-property-binding-vs-host-binding-and-eventbinding-vs-host-listener/diff-between-property-binding-vs-host-binding-and-eventbinding-vs-host-listener';
 
 @Component({
   selector: 'app-root',
-  imports: [ModifyDomElementUsingElementRef,LearningRenderer,HiglightProduct,LearnHostBinding],
+  imports: [ModifyDomElementUsingElementRef,LearningRenderer,HiglightProduct,LearnHostBinding,DiffBetweenPropertyBindingVsHostBindingAndEventbindingVsHostListener],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
