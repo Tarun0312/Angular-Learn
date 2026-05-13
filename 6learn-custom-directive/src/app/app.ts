@@ -8,11 +8,12 @@ import { CustomPropertyBindingInDirective } from './custom-property-binding-in-d
 import { ConditionalDirective } from './conditional-directive/conditional-directive';
 import { CreatingCustomClassDirective } from './creating-custom-class-directive/creating-custom-class-directive';
 import { CreatingCustomStyleDirective } from './creating-custom-style-directive/creating-custom-style-directive';
+import { LearnNgIfWorking } from './learn-ng-if-working/learn-ng-if-working';
 
 @Component({
   selector: 'app-root',
   imports: [ModifyDomElementUsingElementRef,LearningRenderer,HiglightProduct,LearnHostBinding,DiffBetweenPropertyBindingVsHostBindingAndEventbindingVsHostListener,CustomPropertyBindingInDirective,
-    ConditionalDirective,CreatingCustomClassDirective,CreatingCustomStyleDirective
+    ConditionalDirective,CreatingCustomClassDirective,CreatingCustomStyleDirective,LearnNgIfWorking
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

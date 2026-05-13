@@ -1,0 +1,64 @@
+<p>learn-ng-if-working works!</p>
+<button (click)="updatePrivacy()">Check Privacy</button>
+<div>
+    Review Privacy Conditions
+</div>
+<b>* MEANS structural directive.*ngIf is structural directive.</b>
+
+<!-- VIEW cONTAINER -->
+<div *ngIf="showPrivacy;else someTemplate">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus aut hic dolore atque modi dolorum
+        perspiciatis, autem, nihil architecto fuga natus odit et vero quia enim laborum officiis blanditiis tenetur.
+        Mollitia in placeat molestiae similique numquam facilis tenetur voluptas harum enim amet. Ducimus provident odio
+        iste, similique porro adipisci? Deleniti molestias vitae soluta molestiae saepe natus. Quis sint nesciunt
+        dolore!</p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt, nemo recusandae quo quis quidem
+        commodi doloribus provident aliquid consequatur, soluta accusantium officia alias facilis nam numquam omnis
+        reprehenderit. Est!
+        A at expedita, debitis officia id consequuntur quas ab odit quos molestiae sit corrupti delectus sed deleniti
+        est eum aliquam! Tempore, eaque! Itaque, non qui. Fugiat nam voluptatum minima ad.
+        Dolor quia expedita deserunt saepe provident libero at. Voluptatem, quaerat labore totam ullam numquam esse fuga
+        doloribus dignissimos atque? Eum nostrum reprehenderit autem voluptate quibusdam voluptatum. Fuga quidem natus
+        cumque.
+        Est alias fugit voluptatibus ab, modi perspiciatis quos consequatur illo deleniti mollitia maiores nostrum
+        numquam repellendus exercitationem tempore amet nesciunt molestias neque aperiam cum dicta magni. Iusto cum
+        dolorum distinctio!
+        Commodi quasi necessitatibus minus quaerat ea laboriosam dignissimos eum, ex odit cumque aut voluptates magnam
+        voluptatibus itaque consequatur porro quas. Ab eaque nesciunt in numquam eveniet neque magnam quam laboriosam?
+    </p>
+</div>
+<!-- From line 9 to 30 VIEW cONTAINER -->
+
+<ng-template #someTemplate>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, porro eveniet. Placeat harum tenetur nisi nihil sequi, soluta assumenda eaque consectetur distinctio quibusdam temporibus. Beatae sunt odit labore nostrum eius.
+</ng-template>
+
+<b style="margin-top: 20px;">*ngIf is structural directive.When Angular will see *ngIf ,then it will move the view container of *ngIf into
+    ng-template ,and put [ngIf] with square bracket without asterisk on ng-template internally </b>
+<!-- For.eg -->
+<ng-template [ngIf]="showPrivacy" [ngIfElse]="someTemplate">
+    <div style="margin-top: 20px;">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus aut hic dolore atque modi dolorum
+            perspiciatis, autem, nihil architecto fuga natus odit et vero quia enim laborum officiis blanditiis tenetur.
+            Mollitia in placeat molestiae similique numquam facilis tenetur voluptas harum enim amet. Ducimus provident
+            odio iste, similique porro adipisci? Deleniti molestias vitae soluta molestiae saepe natus. Quis sint
+            nesciunt dolore!</p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt, nemo recusandae quo quis
+            quidem commodi doloribus provident aliquid consequatur, soluta accusantium officia alias facilis nam numquam
+            omnis reprehenderit. Est!
+            A at expedita, debitis officia id consequuntur quas ab odit quos molestiae sit corrupti delectus sed
+            deleniti est eum aliquam! Tempore, eaque! Itaque, non qui. Fugiat nam voluptatum minima ad.
+            Dolor quia expedita deserunt saepe provident libero at. Voluptatem, quaerat labore totam ullam numquam esse
+            fuga doloribus dignissimos atque? Eum nostrum reprehenderit autem voluptate quibusdam voluptatum. Fuga
+            quidem natus cumque.
+            Est alias fugit voluptatibus ab, modi perspiciatis quos consequatur illo deleniti mollitia maiores nostrum
+            numquam repellendus exercitationem tempore amet nesciunt molestias neque aperiam cum dicta magni. Iusto cum
+            dolorum distinctio!
+            Commodi quasi necessitatibus minus quaerat ea laboriosam dignissimos eum, ex odit cumque aut voluptates
+            magnam voluptatibus itaque consequatur porro quas. Ab eaque nesciunt in numquam eveniet neque magnam quam
+            laboriosam?
+        </p>
+    </div>
+</ng-template>
