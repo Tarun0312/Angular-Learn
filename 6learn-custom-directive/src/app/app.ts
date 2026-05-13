@@ -10,11 +10,12 @@ import { CreatingCustomClassDirective } from './creating-custom-class-directive/
 import { CreatingCustomStyleDirective } from './creating-custom-style-directive/creating-custom-style-directive';
 import { LearnNgIfWorking } from './learn-ng-if-working/learn-ng-if-working';
 import { CreatingCustomAttributeDirective } from './creating-custom-attribute-directive/creating-custom-attribute-directive';
+import { SwitchCaseLearn } from './switch-case-learn/switch-case-learn';
 
 @Component({
   selector: 'app-root',
   imports: [ModifyDomElementUsingElementRef,LearningRenderer,HiglightProduct,LearnHostBinding,DiffBetweenPropertyBindingVsHostBindingAndEventbindingVsHostListener,CustomPropertyBindingInDirective,
-    ConditionalDirective,CreatingCustomClassDirective,CreatingCustomStyleDirective,LearnNgIfWorking,CreatingCustomAttributeDirective
+    ConditionalDirective,CreatingCustomClassDirective,CreatingCustomStyleDirective,LearnNgIfWorking,CreatingCustomAttributeDirective,SwitchCaseLearn
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

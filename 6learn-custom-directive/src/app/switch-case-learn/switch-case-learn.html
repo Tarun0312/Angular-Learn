@@ -1,0 +1,12 @@
+<p>switch-case-learn works!</p>
+<div style="display: flex; gap: 10px">
+    <span (click)="changeTabValue('1');">Home</span>
+    <span (click)="changeTabValue('2');">About us</span>
+    <span (click)="changeTabValue('3');">Contact us</span>
+</div>
+    <div [ngSwitch]="tabValue">
+        <div *ngSwitchDefault>Home ipsum dolor sit amet consectetur adipisicing elit. Minima laborum, quam numquam repellat deleniti aliquid id excepturi cupiditate atque, totam accusantium dolor non ipsam cum corrupti praesentium, explicabo tempora. Officiis.</div>
+        <div *ngSwitchCase="'2'">About ipsum dolor sit amet consectetur adipisicing elit. Minima laborum, quam numquam repellat deleniti aliquid id excepturi cupiditate atque, totam accusantium dolor non ipsam cum corrupti praesentium, explicabo tempora. Officiis.</div>
+        <div *ngSwitchCase="'3'">Contact ipsum dolor sit amet consectetur adipisicing elit. Minima laborum, quam numquam repellat deleniti aliquid id excepturi cupiditate atque, totam accusantium dolor non ipsam cum corrupti praesentium, explicabo tempora. Officiis.</div>
+
+    </div>
