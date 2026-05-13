@@ -9,11 +9,12 @@ import { ConditionalDirective } from './conditional-directive/conditional-direct
 import { CreatingCustomClassDirective } from './creating-custom-class-directive/creating-custom-class-directive';
 import { CreatingCustomStyleDirective } from './creating-custom-style-directive/creating-custom-style-directive';
 import { LearnNgIfWorking } from './learn-ng-if-working/learn-ng-if-working';
+import { CreatingCustomAttributeDirective } from './creating-custom-attribute-directive/creating-custom-attribute-directive';
 
 @Component({
   selector: 'app-root',
   imports: [ModifyDomElementUsingElementRef,LearningRenderer,HiglightProduct,LearnHostBinding,DiffBetweenPropertyBindingVsHostBindingAndEventbindingVsHostListener,CustomPropertyBindingInDirective,
-    ConditionalDirective,CreatingCustomClassDirective,CreatingCustomStyleDirective,LearnNgIfWorking
+    ConditionalDirective,CreatingCustomClassDirective,CreatingCustomStyleDirective,LearnNgIfWorking,CreatingCustomAttributeDirective
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
