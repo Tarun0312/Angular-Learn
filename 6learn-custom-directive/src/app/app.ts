@@ -7,11 +7,12 @@ import { DiffBetweenPropertyBindingVsHostBindingAndEventbindingVsHostListener } 
 import { CustomPropertyBindingInDirective } from './custom-property-binding-in-directive/custom-property-binding-in-directive';
 import { ConditionalDirective } from './conditional-directive/conditional-directive';
 import { CreatingCustomClassDirective } from './creating-custom-class-directive/creating-custom-class-directive';
+import { CreatingCustomStyleDirective } from './creating-custom-style-directive/creating-custom-style-directive';
 
 @Component({
   selector: 'app-root',
   imports: [ModifyDomElementUsingElementRef,LearningRenderer,HiglightProduct,LearnHostBinding,DiffBetweenPropertyBindingVsHostBindingAndEventbindingVsHostListener,CustomPropertyBindingInDirective,
-    ConditionalDirective,CreatingCustomClassDirective
+    ConditionalDirective,CreatingCustomClassDirective,CreatingCustomStyleDirective
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

@@ -5,7 +5,8 @@ import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
 })
 export class CustomClass {
   constructor(private element:ElementRef,private renderer:Renderer2) {}
-
+  
+  // when receiving value via input ,if u want to perform some business logic,use setter method by using set keyword on property name
   // using setter method
   // @Input() set appCustomClass(value:Object){
   //   const entries = Object.entries(value ?? {})
