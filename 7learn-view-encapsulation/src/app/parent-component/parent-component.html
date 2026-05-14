@@ -12,9 +12,14 @@
     <li> encapsulation:ViewEncapsulation.Emulated -> By default viewEncapsulation is emulated.For each each component, an unique attribute is given by angular which is used,so that css of parent componnet 
     cannot be used in child component</li>
 
-    <li style="margin-top: 20px;"> encapsulation:ViewEncapsulation.None -> Now For each  component,unique attribute will not created.A parent component class can now be applied in child component and also it is applied on siblings</li>
+    <li style="margin-top: 20px;"> encapsulation:ViewEncapsulation.None -> Now For each  component,unique attribute will not created.A parent component class can now be applied in child component and also it is applied on siblings.It will like global css</li>
+
 
     <!-- check child 2 -->
         <li style="margin-top: 20px;"> encapsulation:ViewEncapsulation.ShadowDom -> For Those component,separete shadow dom will be created and also there is normal dom .So in those componnets ,classes of other componnets will not be applied</li>
+Can a child component using ViewEncapsulation.ShadowDom access CSS classes from a parent component with ViewEncapsulation.None?
+    YES — class names exist and can be used
+
+But the styles attached to those classes usually do NOT penetrate into Shadow DOM.
 
 </b>
