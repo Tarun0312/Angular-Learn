@@ -1,0 +1,20 @@
+<div style="width: 80%;display: flex;justify-content: center;align-items: center;border: solid 1px black;">
+    <p>parent-component works!</p>
+    <button>Parent Button</button>
+
+</div>
+<div style="width: 80%; display: flex; gap:20px">
+    <app-child1 style="width: 100%;"></app-child1>
+    <app-child2 style="width: 100%;"></app-child2>
+</div>
+
+<b>  
+    <li> encapsulation:ViewEncapsulation.Emulated -> By default viewEncapsulation is emulated.For each each component, an unique attribute is given by angular which is used,so that css of parent componnet 
+    cannot be used in child component</li>
+
+    <li style="margin-top: 20px;"> encapsulation:ViewEncapsulation.None -> Now For each  component,unique attribute will not created.A parent component class can now be applied in child component and also it is applied on siblings</li>
+
+    <!-- check child 2 -->
+        <li style="margin-top: 20px;"> encapsulation:ViewEncapsulation.ShadowDom -> For Those component,separete shadow dom will be created and also there is normal dom .So in those componnets ,classes of other componnets will not be applied</li>
+
+</b>
