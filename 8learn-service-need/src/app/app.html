@@ -1,0 +1,14 @@
+<b>Service is used to avoid redundancy (using same piece of code again and again)</b>
+<b>Main usecase -> 
+  <li>  1> To Communicate between two unrelated components(like sibling component)</li>
+ <li> 2>To make same piece of code at common place(Business logic),so that DRY principle will not get breached .Also called as utility</li>
+</b>
+<app-header></app-header>
+<b>Above code is using service,SUBSCRIPTION BUSINESS LOGIC AT ONE PLACE ,so it is following DRY priciple but there is an issue in this code. 
+
+  <br>
+  Above code is tighttly coupled.It is dependent on dependency Subscription Service.If anything in dependency will get changed,then the component where dependenvy is used will not get work properly
+  E.g if we create parameterised constructor in Subscription service,we need to do change in all component where subcription service dependency is used.So here we will use Depenedency Injection,Instead of created
+   instance of dependency of yourself,angular will inject the Depenecy into component and create the instance itself.That code is not tigtly coupled
+  
+</b>
